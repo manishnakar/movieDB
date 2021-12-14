@@ -4,7 +4,7 @@ import './header.css'
 
 function Header() {
     return (
-        <div className="header">
+        <div onClick={()=> window.scroll(0,0)} className="header">
             MovieDB
         </div>
     )
