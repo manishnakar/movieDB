@@ -1,16 +1,17 @@
-npx create-react-app
+# Create React Application
 
-npm install axios react-router-dom @material-ui/core @material-ui/icons
+`npx create-react-app`
 
-#rm all unwanted files
-rm -fr public/logo192.png
-rm -fr public/logo512.png
-rm -fr src/App.test.js
-rm -fr src/logo.svg
-rm -fr src/setupTests.js
-rm -fr src/reportWebVitals.js
+## install dependencies
 
-#create folder structure
+`npm install axios react-router-dom @material-ui/core @material-ui/icons`
+
+# Remove unwanted files
+
+`rm -fr public/logo192.png rm -fr public/logo512.png rm -fr src/App.test.js rm -fr src/logo.svg rm -fr src/setupTests.js rm -fr src/reportWebVitals.js `
+
+# Create folder structure
+
 mkdir components/header -p
 touch components/Header/Header.js
 touch components/Header/index.js
@@ -29,4 +30,4 @@ touch pages/search.js
 mkdir config
 touch config/config.js
 
-#Add Google fonts in index.html file
+# Add Google fonts in index.html file
