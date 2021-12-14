@@ -1,12 +1,15 @@
-# Create React Application
+#MovieDB
+Lets Create a Movies and TV Series App in React JS and Material UI with full responsive fuctionality. We will use MovieDB API for backend.
+
+## Create React Application
 
 `npx create-react-app`
 
 ## install dependencies
 
-`npm install axios react-router-dom @material-ui/core @material-ui/icons`
+`npm install axios react-router-dom @material-ui/core @material-ui/icons @material-ui/lab`
 
-# Remove unwanted files
+## Remove unwanted files
 
     rm -fr public/logo192.png
     rm -fr public/logo512.png
@@ -15,7 +18,7 @@
     rm -fr src/setupTests.js
     rm -fr src/reportWebVitals.js
 
-# Create folder structure
+## Create folder structure
 
     mkdir components/header -p
     touch components/Header/Header.js
@@ -36,4 +39,4 @@
     mkdir config
     touch config/config.js
 
-# Add Google fonts in index.html file
+## Add Google fonts in index.html file
