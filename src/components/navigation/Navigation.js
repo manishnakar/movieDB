@@ -15,6 +15,7 @@ const useStyles = makeStyles({
     bottom: 0,    
     backgroundColor: "#2d313a",
     zIndex: 100,
+    boxShadow: "0px 1px 5px #CECECE",
   },
 });
 
@@ -33,6 +34,7 @@ export default function SimpleBottomNavigation() {
     } else if (value === 3) {
       navigate("/search");
     }
+    // eslint-disable-next-line
   }, [value, navigate]);
 
   return (

@@ -4,7 +4,8 @@
   display: flex;
   position: fixed;
   background: #39445a;
-  font-size: 5vw;
+  font-family: "Montserrat", sans-serif, Courier, monospace;
+  font-size: 3vw;
   padding-bottom: 15px;
   box-shadow: 0px 1px 5px black;
   color: white;

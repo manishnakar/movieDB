@@ -10,7 +10,6 @@ const darkTheme = createTheme({
 
 })
 
-
 function CustomPagination({setPage, numOfPages = 10}) {
 
     const handlePageChange = (page) => {

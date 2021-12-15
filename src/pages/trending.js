@@ -4,6 +4,7 @@ import Card from '../components/card/card'
 import CustomPagination from '../components/Pagination/CustomPagination'
 import './trending.css'
 
+
 const Trending = () => {
 
   const [content, setContent] = useState([])
@@ -11,14 +12,18 @@ const Trending = () => {
   const [numOfPages, setNumOfPages] = useState()
 
   const fetchTrending = async() => {  
-
-      const { data } = await axios.get(`https://api.themoviedb.org/3/trending/all/week?api_key=c3e0a6e96409f270c2e75c0c411273da&page=${page}`)      
+      
+      const { data } = await axios.get(`${process.env.REACT_APP_MOVIE_DB_API_URL}/3/trending/all/day?api_key=${process.env.REACT_APP_MOVIE_DB_API_TOKEN}&page=${page}`)     
       setContent(data.results)
+      //console.log(data.results)
       setNumOfPages(data.total_pages)
 
   }
 
-  useEffect(() => {fetchTrending();}, [page])
+  useEffect(() => {
+    fetchTrending();
+  // eslint-disable-next-line
+  }, [page])
 
   return (
     <>
@@ -30,7 +35,12 @@ const Trending = () => {
           })
         }
       </div>
-      <CustomPagination setPage={setPage}  numOfPages={numOfPages} />
+
+        {numOfPages > 1 && (
+          <CustomPagination setPage={setPage}  numOfPages={numOfPages} />
+        )}
+
+      
     </>
   )
 }

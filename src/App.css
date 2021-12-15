@@ -1,5 +1,8 @@
 * {
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .App {
@@ -21,10 +24,10 @@
   display: flex;
   justify-content: center;
   font-family: "Montserrat", sans-serif;
-  font-size: 2vw;
+  font-size: 1vw;
   padding: 4px;
   border-radius: 50px;
-  color: white;
+  color: #cecece;
 }
 
 @media (max-width: 1000px) {
