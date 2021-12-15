@@ -1,17 +1,21 @@
+import React, {Suspense, lazy} from 'react';
 import Header from './components/header/Header'
 import {Container} from '@material-ui/core'
 import SimpleBottomNavigation from './components/navigation/Navigation'
 import './App.css';
 import { BrowserRouter,  Routes ,Route } from 'react-router-dom';
 
-import Trending from './pages/trending'
-import Search from './pages/search'
-import Movies from './pages/movies'
-import Series from './pages/series'
+//Lazy loading of react components
+const Trending = lazy(() => import('./pages/trending'));
+const Search = lazy(() => import('./pages/search'));
+const Movies = lazy(() => import('./pages/movies'));
+const Series = lazy(() => import('./pages/series'));
+
 
 function App() {
   return (
     <BrowserRouter>
+     <Suspense fallback={<div>Loading...</div>}>
         <Header></Header>
     <div className="App">
       <Container>
@@ -24,6 +28,7 @@ function App() {
       </Container>      
       <SimpleBottomNavigation></SimpleBottomNavigation>
     </div>
+    </Suspense>
     </BrowserRouter>
   );
 }

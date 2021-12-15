@@ -53,7 +53,7 @@ const Movies = () => {
 
       </div>
       {
-        numOfPages>1 && (
+        numOfPages > 1 && (
           <Pagination setPage={setPage} numOfPages={numOfPages} />
         )
       }
