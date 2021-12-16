@@ -5,6 +5,7 @@ import SimpleBottomNavigation from './components/navigation/Navigation'
 import './App.css';
 import { BrowserRouter,  Routes ,Route } from 'react-router-dom';
 
+
 //Lazy loading of react components
 const Trending = lazy(() => import('./pages/trending'));
 const Search = lazy(() => import('./pages/search'));
@@ -14,9 +15,10 @@ const Series = lazy(() => import('./pages/series'));
 
 function App() {
   return (
+    
     <BrowserRouter>
      <Suspense fallback={<div>Loading...</div>}>
-        <Header></Header>
+     <Header></Header>         
     <div className="App">
       <Container>
         <Routes>          
