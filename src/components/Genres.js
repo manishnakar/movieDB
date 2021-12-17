@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react'
-import axios from 'axios'
+import React, {useEffect, useState} from 'react'
+import axios from '../axios'
 import {Chip} from '@material-ui/core'
 
 const Genres = ({
@@ -9,6 +9,10 @@ const Genres = ({
     genres, 
     setSelectedGenres, 
     selectedGenres}) => {
+
+    const [isError, setisError] = useState(false)    
+    const [errorMessage, setErrorMessage] = useState("")    
+
 
     const handleRemove = (genre) => {
 
@@ -26,10 +30,12 @@ const Genres = ({
     }
 
     const fetchGenres = async() => {
-        const {data} = await axios.get(`${process.env.REACT_APP_MOVIE_DB_API_URL}/3/genre/${type}/list?api_key=${process.env.REACT_APP_MOVIE_DB_API_TOKEN}&language=en-US`)           
+        //const {data} = await axios.get()           
         //console.log(data.genres)
-        setGenres(data.genres)
-        setPage(1)        
+    
+         await axios.get(`/3/genre/${type}/list?api_key=${process.env.REACT_APP_MOVIE_DB_API_TOKEN}&language=en-US`)
+                .then((res) => {setGenres(res.data.genres); setPage(1) })
+                .catch((err) => {setisError(true); setErrorMessage(err.message); })                
 
     }
 
@@ -42,7 +48,10 @@ const Genres = ({
        // eslint-disable-next-line         
     }, [])
 
-    return (
+    if (isError) return 'An error has occurred: ' + errorMessage
+
+    return (        
+
         <div style={{ padding: "6px 0"}}>
               {selectedGenres && selectedGenres.map((genre) => {
                   return <Chip label={genre.name} key={genre.id} color='primary' size='small' style={{ margin: "2px"}} 

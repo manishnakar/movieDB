@@ -4,7 +4,8 @@ import {Container} from '@material-ui/core'
 import SimpleBottomNavigation from './components/navigation/Navigation'
 import './App.css';
 import { BrowserRouter,  Routes ,Route } from 'react-router-dom';
-
+import { Provider } from 'react-redux';
+import store from './redux/store'
 
 //Lazy loading of react components
 const Trending = lazy(() => import('./pages/trending'));
@@ -15,7 +16,7 @@ const Series = lazy(() => import('./pages/series'));
 
 function App() {
   return (
-    
+    <Provider store={store}>
     <BrowserRouter>
      <Suspense fallback={<div>Loading...</div>}>
      <Header></Header>         
@@ -32,6 +33,7 @@ function App() {
     </div>
     </Suspense>
     </BrowserRouter>
+    </Provider>
   );
 }
 

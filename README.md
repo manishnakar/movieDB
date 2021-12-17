@@ -8,10 +8,20 @@ Try the demo at https://moviedb.firebaseapp.com.
 
 - Create React App
 - React Router
+- redux-toolkit
 - Firebase SDK with OAuth authentication
 - Lazy loading
 - Google analytics
 - Social Login
+
+#TODO
+react-query for caching
+react toast
+react content loader
+react filepond for file upload
+react select - react-select.com/home
+React Hook Form
+splitbee.io
 
 ## Deploying to Firebase
 
